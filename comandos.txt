@@ -1,0 +1,2 @@
+start a.jpg
+taskkill.exe /IM Microsoft.Photos.exe /F
