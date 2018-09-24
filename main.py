@@ -3,6 +3,8 @@ from fnmatch import fnmatch
 import os.path
 import pytesseract as ocr
 from PIL import Image
+import Image
+import ImageDraw
 
 
 os.system("cls");
@@ -27,6 +29,13 @@ for path, subdirs, files in os.walk(root):
                 os.system(comandoFechar)
                 os.system(comandoAbrir)
                 print(dir)
+                nome = input("NOME>>>")
+                img = Image.open(dir)
+                draw = ImageDraw.Draw(img)
+                texto = nome
+                pos = 10, 10
+                draw.text(pos, texto)
+                img.save(dir)
                 os.system("PAUSE");
                 os.system("cls");
 
