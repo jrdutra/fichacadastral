@@ -3,8 +3,8 @@ from fnmatch import fnmatch
 import os.path
 import pytesseract as ocr
 from PIL import Image
-import Image
-import ImageDraw
+from PIL import ImageFont
+from PIL import ImageDraw
 
 
 os.system("cls");
@@ -33,8 +33,8 @@ for path, subdirs, files in os.walk(root):
                 img = Image.open(dir)
                 draw = ImageDraw.Draw(img)
                 texto = nome
-                pos = 10, 10
-                draw.text(pos, texto)
+                font = ImageFont.truetype("arial-bold.ttf", 36)
+                draw.text((50, 50), nome, (0, 0, 0), font=font)
                 img.save(dir)
                 os.system("PAUSE");
                 os.system("cls");
